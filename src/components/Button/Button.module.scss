@@ -2,15 +2,17 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.6rem;
   padding: 9px 16px;
   border-radius: 4px;
+  font-size: 1.6rem;
   font-weight: 700;
+  font-family: 'ProximaNova', sans-serif;
   min-width: 100px;
   cursor: pointer;
   background-color: var(--white);
   border: 1px solid transparent;
   user-select: none;
+  margin: 0 10px;
 
   + .wrapper {
     margin-left: 8px;
@@ -70,6 +72,11 @@
   &:hover {
     text-decoration: underline;
   }
+}
+
+.box {
+  border-color: rgba(22, 24, 35, 0.15);
+  font-weight: 600;
 }
 
 

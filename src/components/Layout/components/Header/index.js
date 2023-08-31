@@ -4,14 +4,13 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faCircleQuestion,
   faCircleXmark,
-  faCloudUpload,
   faCoins,
   faEarthAsia,
   faEllipsisVertical,
   faGear,
   faKeyboard,
   faMagnifyingGlass,
-  faMessage,
+  faPlus,
   faSignOut,
   faSpinner,
   faUser,
@@ -25,6 +24,7 @@ import { Wrapper as PopperWrapper } from '~/components/Popper';
 import styles from './Header.module.scss';
 import AccountsItem from '~/components/AccountItem';
 import Menu from '~/components/Popper/Menu';
+import { MessageIcon, NotiIcon } from '~/components/Icons';
 
 const cx = classNames.bind(styles);
 
@@ -107,11 +107,13 @@ function Header() {
   return (
     <header className={cx('wrapper')}>
       <div className={cx('inner')}>
-        <img
-          className={cx('logo_img')}
-          alt="avatar"
-          src="https://i.pinimg.com/736x/9c/d5/b4/9cd5b4fcd004dd7e48ab0deb20052705.jpg"
-        />
+        <div className={cx('logo')}>
+          <img
+            className={cx('logo_img')}
+            alt="avatar"
+            src="https://i.pinimg.com/736x/9c/d5/b4/9cd5b4fcd004dd7e48ab0deb20052705.jpg"
+          />
+        </div>
 
         <HeadlessTippy
           interactive
@@ -145,14 +147,21 @@ function Header() {
         <div className={cx('actions')}>
           {currentUser ? (
             <>
-              <Tippy delay={[0, 200]} content="Upload video" placement="bottom">
+              <Button box leftIcon={<FontAwesomeIcon icon={faPlus} />}>
+                Tải lên
+              </Button>
+
+              <Tippy delay={[0, 200]} content="Message" placement="bottom">
                 <button className={cx('action-btn')}>
-                  <FontAwesomeIcon icon={faCloudUpload} />
+                  <MessageIcon />
                 </button>
               </Tippy>
-              <button className={cx('action-btn')}>
-                <FontAwesomeIcon icon={faMessage} />
-              </button>
+
+              <Tippy delay={[0, 200]} content="Notification" placement="bottom">
+                <button className={cx('action-btn')}>
+                  <NotiIcon />
+                </button>
+              </Tippy>
             </>
           ) : (
             <>

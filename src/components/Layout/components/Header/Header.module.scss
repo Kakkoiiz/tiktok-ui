@@ -18,7 +18,9 @@
   align-items: center;
   display: flex;
   justify-content: space-between;
-  
+}
+.logo {
+  width: 200px;
 }
 
 .logo_img {
@@ -31,8 +33,6 @@
   display: flex;
   align-items: center;
 }
-
-
 
 .search,
 .search-result {
@@ -118,7 +118,6 @@
   align-items: center;
 }
 
-
 .more-btn {
   font-size: 2rem;
   margin-left: 28px;
@@ -128,10 +127,14 @@
 }
 
 .action-btn {
+  display: flex;
+  align-items: center;
+  width: 32px;
+  height: 32px;
   color: #161823;
   font-size: 2.2rem;
   background-color: transparent;
-  padding: 4px 12px;
+  margin: 0px 8px;
   cursor: pointer;
 }
 
