@@ -25,6 +25,7 @@ import styles from './Header.module.scss';
 import AccountsItem from '~/components/AccountItem';
 import Menu from '~/components/Popper/Menu';
 import { MessageIcon, NotiIcon } from '~/components/Icons';
+import Image from '~/components/Image'
 
 const cx = classNames.bind(styles);
 
@@ -172,10 +173,11 @@ function Header() {
 
           <Menu items={currentUser ? userMenu : MENU_ITEMS} onChange={handleMenuChange}>
             {currentUser ? (
-              <img
+              <Image
                 src="https://i.pinimg.com/236x/53/fe/e6/53fee6f3f74464e45e07c9631488521b.jpg"
                 className={cx('user-avatar')}
                 alt="dungdz"
+                fallback='https://i.pinimg.com/564x/76/f4/a9/76f4a98a30cd09fb04cff350f64006c4.jpg'
               />
             ) : (
               <button className={cx('more-btn')}>
